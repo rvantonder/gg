@@ -6705,6 +6705,10 @@ var $author$project$Main$update = F2(
 						$elm$core$Platform$Cmd$none);
 				case 'OnResize':
 					var windowSize = msg.a;
+					var _v4 = A2(
+						$elm$core$Debug$log,
+						'resized',
+						$elm$core$String$fromInt(windowSize.width));
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
@@ -6716,7 +6720,7 @@ var $author$project$Main$update = F2(
 							$elm$core$List$sortWith,
 							F2(
 								function (l, r) {
-									var _v4 = _Utils_Tuple2(
+									var _v5 = _Utils_Tuple2(
 										A2(
 											$elm$core$String$contains,
 											$NoRedInk$elm_simple_fuzzy$Simple$Fuzzy$root(model.searchInput),
@@ -6725,19 +6729,19 @@ var $author$project$Main$update = F2(
 											$elm$core$String$contains,
 											$NoRedInk$elm_simple_fuzzy$Simple$Fuzzy$root(model.searchInput),
 											$NoRedInk$elm_simple_fuzzy$Simple$Fuzzy$root(r.vivino.name)));
-									_v4$2:
+									_v5$2:
 									while (true) {
-										if (_v4.a) {
-											if (!_v4.b) {
+										if (_v5.a) {
+											if (!_v5.b) {
 												return $elm$core$Basics$GT;
 											} else {
-												break _v4$2;
+												break _v5$2;
 											}
 										} else {
-											if (_v4.b) {
+											if (_v5.b) {
 												return $elm$core$Basics$LT;
 											} else {
-												break _v4$2;
+												break _v5$2;
 											}
 										}
 									}
@@ -15502,7 +15506,8 @@ var $author$project$Main$viewTable = F2(
 			$mdgriffith$elm_ui$Element$table,
 			_List_fromArray(
 				[
-					$mdgriffith$elm_ui$Element$width($mdgriffith$elm_ui$Element$fill)
+					$mdgriffith$elm_ui$Element$width($mdgriffith$elm_ui$Element$fill),
+					$mdgriffith$elm_ui$Element$clip
 				]),
 			{
 				columns: _Utils_ap(
